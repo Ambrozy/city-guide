@@ -1,0 +1,54 @@
+@import '../css/vars';
+
+.place-item {
+  display: block;
+  position: relative;
+  height: 330px;
+  width: 100%;
+  margin-bottom: 24px;
+  overflow: hidden;
+  background: #000;
+  &:hover .pi-small-info::before {
+    transform: translateY(0);
+  }
+  &:hover .pi-img {
+    opacity: 1;
+    transform: translateY(-10px);
+  }
+  .pi-img {
+    position: absolute;
+    left: 0; top: 0;
+    height: 100%;
+    width: auto;
+    opacity: .6;
+    z-index: 1;
+    @include transition();
+  }
+  .pi-small-info {
+    position: absolute;
+    left: 0; right: 0;
+    bottom: 0;
+    padding: 19px 23px;
+    color: #fff;
+    font-weight: 400;
+    z-index: 2;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0; right: 0;
+      bottom: 0; top: 0;
+      background-color: #8bc02e;
+      transform: translateY(100%);
+      z-index: -1;
+      @include transition();
+    }
+  }
+  .pi-title {
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    margin-bottom: 6px;
+  }
+  .pi-city {
+    font-size: 1.8rem;
+  }
+}

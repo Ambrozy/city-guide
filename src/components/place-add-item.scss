@@ -1,0 +1,45 @@
+@import '../css/vars';
+
+.place-add-item {
+  display: block;
+  height: 330px;
+  width: 100%;
+  margin-bottom: 24px;
+  padding: 29px;
+  background-color: #eee;
+  background: #eee url('../img/ico-add-place.png') no-repeat 29px 16px;
+  .pai-title {
+    font-size: 3.6rem;
+    font-weight: 300;
+    line-height: 4rem;
+    margin-top: 90px;
+    margin-bottom: 28px;
+  }
+  .pai-btn {
+    display: block;
+    height: 70px;
+    border: 2px solid #4f760b;
+    border-radius: 2px;
+    background-color: #8bc02e;
+    box-shadow: inset 0px 5px 0px 0px #a7e639;
+    text-align: center;
+    color: #fff;
+    font-size: 2.4rem;
+    line-height: 3.2rem;
+    padding: 15px 0;
+    margin-bottom: 15px;
+    &:hover {
+      opacity: .8;
+    }
+  }
+}
+@include media-breakpoint-down('xxl') {
+  .place-add-item {
+    .pai-title {
+      margin-top: 120px;
+    }
+    .pai-btn {
+      height: 60px;
+    }
+  }
+}

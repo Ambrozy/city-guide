@@ -1,0 +1,62 @@
+@import '../css/vars';
+
+$border-color: #161616;
+
+.city-select-p {
+  position: relative;
+  font-size: 3.6rem;
+  line-height: 4rem;
+  margin-bottom: 5.5rem;
+  text-indent: -.3rem;
+}
+.city-select {
+  &:hover .cs-popup {
+    visibility: visible;
+    z-index: 10;
+    opacity: 1;
+  }
+  .cs-popup {
+    left: 0;
+    top: 74px;
+    position: absolute;
+    width: 100%;
+    max-width: 1040px;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid $border-color;
+    background-color: #fff;
+    padding: 27px 48px;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    text-align: left;
+    visibility: hidden;
+    z-index: -1;
+    opacity: 0;
+    @include transition();
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: 17.6rem;
+      top: -70px;
+      border: 19px solid transparent;
+      border-top: 35px solid transparent;
+      border-bottom: 35px solid $border-color;
+    }
+    &::after {
+      top: -69px;
+      border-bottom: 35px solid #fff;
+    }
+  }
+  .cs-popup-item {
+    width: 33.33%;
+    & > a:hover { text-decoration: underline; }
+  }
+}
+
+@include media-breakpoint-down('md') {
+  .city-select .cs-popup-item { width: 50%; }
+}
+@include media-breakpoint-down('sm') {
+  .city-select .cs-popup-item { width: 100%; }
+}
